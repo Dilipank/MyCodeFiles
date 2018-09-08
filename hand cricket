@@ -1,0 +1,47 @@
+'''
+Two players
+show off hands (random 1 to 6)
+game over -- bat = bowl or 6 attempts
+count -- increment bat score
+'''
+
+from random import randint
+import sys
+
+class Player(object):
+    attempts = 0
+
+    def __init__(self, name, score=0):
+        self.name = name
+        self.score = score
+
+    def show_hands(self):
+        return randint(1, 20)
+
+    def validate(self, player2):
+        if P1 == P2:
+            print ('It"s a tie. GAME OVER!')
+            sys.exit()
+        elif Player.attempts >= 6:
+            print ("Dilip scored {} and won".format(player1.score)) if player1.score > player2.score \
+                else print ("Tony scored {} and won".format(player2.score))
+            sys.exit()
+
+player1 = Player('Dilip')
+player2 = Player('Tony')
+
+while True:
+    P1 = player1.show_hands()
+    P2 = player2.show_hands()
+    Player.attempts += 1
+    player1.score += P1
+    player2.score += P2
+    print("Dilip's score is {}".format(P1) + " Tony's score is {}".format(P2))
+    player1.validate(player2)
+
+
+
+
+
+
+
